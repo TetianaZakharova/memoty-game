@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { useStopwatch } from 'react-timer-hook';
+
 import './CardList.css'
 import { SingleCard } from './SingleCard'
 
@@ -31,8 +33,9 @@ export const CardList = () => {
     const [choiceOne, setChoiceOne] = useState(null)
     const [choiceTwo, setChoiceTwo] = useState(null)
     const [disabled, setDisabled] = useState(false)
+    const [sound, setSound] = useState(null)   
 
-    const [sound, setSound] = useState(null)
+    const { seconds, minutes, start, reset, pause} = useStopwatch({ autoStart: false });
 
   //shuffle cards
   const shuffleCards = () => {
@@ -44,8 +47,13 @@ export const CardList = () => {
     setChoiceTwo(null)  
     setCards(shuffledCards)
     setTurns(0)
+    reset({}, false);
   }  
   // console.log(cards, turns)
+
+  // var stopwatchOffset = new Date();
+  // stopwatchOffset.setSeconds(stopwatchOffset.getSeconds());
+
 
   //handle a choice
   const handleChoice = (card) => {
@@ -55,7 +63,7 @@ export const CardList = () => {
 
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
   }
-
+ 
   // const handleSound = (card) => {
   //   const audio = new Audio(card.spell)
   //   setSound(audio.play())
@@ -65,13 +73,20 @@ export const CardList = () => {
   const bingoSound = () => {
     const bingo = new Audio ('/sound/bingo.m4a')
       setSound(bingo.play())
-    }
- 
+  }
+
+ useEffect(() => {
+  if(choiceOne && !choiceTwo) {
+    if(turns === 0) {
+      start() 
+    } 
+  } 
+ },[choiceOne])
 
   //compare 2 selected cards
   useEffect(() => {
     if (choiceOne && choiceTwo) {
-      setDisabled(true)   
+      setDisabled(true)       
       if (choiceOne.src === choiceTwo.src) {
         setTimeout( () => bingoSound(), 800)
         setCards(prevCards => {
@@ -83,7 +98,7 @@ export const CardList = () => {
             }
           })
         })
-      // resetTurn()
+      // cards.every(card => card.matched === true)
       setTimeout( () => resetTurn(), 2000)
       }  else {
         // console.log('those cards DO NOT match')
@@ -91,6 +106,12 @@ export const CardList = () => {
       }
     }
   }, [choiceOne, choiceTwo])
+
+  useEffect(() => {
+      if(cards.every(card => card.matched === true)) {
+        pause()
+      }
+  }, [choiceTwo])
 
   // console.log(cards)
 
@@ -102,16 +123,22 @@ export const CardList = () => {
     setDisabled(false)
   }
 
-    // start new game automagically
+    // start new game automatically
     useEffect(() => {
       shuffleCards()
     }, [])
 
     return ( 
         <div className="CardList">
-        <h1>Magic Match</h1>
-        <button onClick={shuffleCards}>New Game</button>
-        
+        <h3>Magic Match</h3>
+        <div className="counter-box">
+          <button onClick={shuffleCards}>New Game</button>
+          <div className="counter">
+            <span>Timer: {minutes}:{seconds} </span>
+            <span> Turns: {turns}</span>
+          </div>  
+        </div>
+      
         <div className="card-grid">
           {cards.map(card =>(
             <SingleCard 
@@ -120,11 +147,10 @@ export const CardList = () => {
               handleChoice={handleChoice}
               flipped={card === choiceOne || card === choiceTwo || card.matched }
               disabled={disabled}
-              // handleSound={handleSound}
+            // handleSound={handleSound}
             />
           ))}
         </div>
-        <p>Turns: {turns}</p>
       </div>
      );
 }
