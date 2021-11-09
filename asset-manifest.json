@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/memoty-game/static/css/main.3cc028cb.chunk.css",
+    "main.css": "/memoty-game/static/css/main.36efb216.chunk.css",
     "main.js": "/memoty-game/static/js/main.0050afc8.chunk.js",
     "main.js.map": "/memoty-game/static/js/main.0050afc8.chunk.js.map",
     "runtime-main.js": "/memoty-game/static/js/runtime-main.a3067521.js",
@@ -8,13 +8,13 @@
     "static/js/2.18139d22.chunk.js": "/memoty-game/static/js/2.18139d22.chunk.js",
     "static/js/2.18139d22.chunk.js.map": "/memoty-game/static/js/2.18139d22.chunk.js.map",
     "index.html": "/memoty-game/index.html",
-    "static/css/main.3cc028cb.chunk.css.map": "/memoty-game/static/css/main.3cc028cb.chunk.css.map",
+    "static/css/main.36efb216.chunk.css.map": "/memoty-game/static/css/main.36efb216.chunk.css.map",
     "static/js/2.18139d22.chunk.js.LICENSE.txt": "/memoty-game/static/js/2.18139d22.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a3067521.js",
     "static/js/2.18139d22.chunk.js",
-    "static/css/main.3cc028cb.chunk.css",
+    "static/css/main.36efb216.chunk.css",
     "static/js/main.0050afc8.chunk.js"
   ]
 }
