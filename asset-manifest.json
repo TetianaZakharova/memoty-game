@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/memoty-game/static/css/main.3cc028cb.chunk.css",
-    "main.js": "/memoty-game/static/js/main.8bcaf972.chunk.js",
-    "main.js.map": "/memoty-game/static/js/main.8bcaf972.chunk.js.map",
+    "main.js": "/memoty-game/static/js/main.0050afc8.chunk.js",
+    "main.js.map": "/memoty-game/static/js/main.0050afc8.chunk.js.map",
     "runtime-main.js": "/memoty-game/static/js/runtime-main.a3067521.js",
     "runtime-main.js.map": "/memoty-game/static/js/runtime-main.a3067521.js.map",
     "static/js/2.18139d22.chunk.js": "/memoty-game/static/js/2.18139d22.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.a3067521.js",
     "static/js/2.18139d22.chunk.js",
     "static/css/main.3cc028cb.chunk.css",
-    "static/js/main.8bcaf972.chunk.js"
+    "static/js/main.0050afc8.chunk.js"
   ]
 }
