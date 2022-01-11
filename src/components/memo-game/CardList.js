@@ -11,20 +11,20 @@ const cardImages = [
     // { "src": "/img/scroll-1.png", matched: false },
     // { "src": "/img/shield-1.png", matched: false },
     // { "src": "/img/sword-1.png", matched: false },
-    { "src": "/img/canario.png", matched: false, "spell": "/sound/canario.m4a" },
-    { "src": "/img/caracol.png", matched: false, "spell": "/sound/caracol.m4a" },
-    { "src": "/img/chinchilla.png", matched: false, "spell": "/sound/chinchilla.m4a" },
-    { "src": "/img/cobaya.png", matched: false, "spell": "/sound/cobaya.m4a" },
-    { "src": "/img/conejo.png", matched: false, "spell": "/sound/conejo.m4a" },
-    { "src": "/img/gato.png", matched: false, "spell": "/sound/gato.m4a" },
-    { "src": "/img/hamster.png", matched: false, "spell": "/sound/hamster.m4a" },
-    { "src": "/img/lagarto.png", matched: false, "spell": "/sound/lagarto.m4a" },
-    { "src": "/img/loro.png", matched: false, "spell": "/sound/loro.m4a" },
-    { "src": "/img/perro.png", matched: false, "spell": "/sound/perro.m4a" },
-    { "src": "/img/pez.png", matched: false, "spell": "/sound/pez.m4a" },
-    { "src": "/img/rata.png", matched: false, "spell": "/sound/rata.m4a" },
-    { "src": "/img/raton.png", matched: false, "spell": "/sound/raton.m4a" },
-    { "src": "/img/tortuga.png", matched: false, "spell": "/sound/tortuga.m4a" },
+    { "src": "./img/canario.png", matched: false, "spell": "./sound/canario.m4a" },
+    { "src": "./img/caracol.png", matched: false, "spell": "./sound/caracol.m4a" },
+    { "src": "./img/chinchilla.png", matched: false, "spell": "./sound/chinchilla.m4a" },
+    { "src": "./img/cobaya.png", matched: false, "spell": "./sound/cobaya.m4a" },
+    { "src": "./img/conejo.png", matched: false, "spell": "./sound/conejo.m4a" },
+    { "src": "./img/gato.png", matched: false, "spell": "./sound/gato.m4a" },
+    { "src": "./img/hamster.png", matched: false, "spell": "./sound/hamster.m4a" },
+    { "src": "./img/lagarto.png", matched: false, "spell": "./sound/lagarto.m4a" },
+    { "src": "./img/loro.png", matched: false, "spell": "./sound/loro.m4a" },
+    { "src": "./img/perro.png", matched: false, "spell": "./sound/perro.m4a" },
+    { "src": "./img/pez.png", matched: false, "spell": "./sound/pez.m4a" },
+    { "src": "./img/rata.png", matched: false, "spell": "./sound/rata.m4a" },
+    { "src": "./img/raton.png", matched: false, "spell": "./sound/raton.m4a" },
+    { "src": "./img/tortuga.png", matched: false, "spell": "./sound/tortuga.m4a" },
   ]
 
 export const CardList = () => {
@@ -71,7 +71,7 @@ export const CardList = () => {
   // }
 
   const bingoSound = () => {
-    const bingo = new Audio ('/sound/bingo.m4a')
+    const bingo = new Audio ('./sound/bingo.m4a')
       setSound(bingo.play())
   }
 
