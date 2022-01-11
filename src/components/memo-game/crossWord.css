@@ -1,0 +1,16 @@
+.clue-cell text {
+    font-weight: bold;
+}
+
+.clue-cell .guess-text-correct{
+    /* background-color:green; */
+    fill:green !important;  
+}
+.clue.correct {
+    text-decoration: line-through;
+    color: rgb(130, 130, 130);
+}
+
+.guess-text-correct ~ rect {
+    fill: green !important;
+}
